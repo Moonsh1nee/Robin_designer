@@ -1,0 +1,22 @@
+{
+  "name": "robin_designer",
+  "version": "1.0.0",
+  "description": "Page about designer Robin",
+  "main": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moonsh1nee/Robin_designer.git"
+  },
+  "author": "Moonsh1ne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moonsh1nee/Robin_designer/issues"
+  },
+  "homepage": "https://github.com/Moonsh1nee/Robin_designer#readme",
+  "dependencies": {
+    "sass": "^1.77.0"
+  }
+}
