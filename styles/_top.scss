@@ -1,0 +1,155 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.top {
+  padding: 190px 0 85px;
+  position: relative;
+
+  &__wrapper {
+    @include m.d-flex(center, center, nowrap, row, 0, 0);
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -90px;
+      right: 0;
+      bottom: 0;
+      left: 39%;
+      z-index: 1;
+      background-color: v.$level_1;
+    }
+
+    @media (max-width: v.$media_xxl) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: v.$media_xl) {
+      &:after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      @include m.d-flex(center, center, nowrap, column, 0, 45px);
+    }
+  }
+
+  &__img {
+    flex: 0 1 auto;
+    transform: translateX(44px);
+    z-index: 2;
+
+    img {
+      width: 100%;
+      max-width: 750px;
+      min-width: 390px;
+      height: 650px;
+      object-fit: cover;
+    }
+
+    @media (max-width: v.$media_xxl) {
+      transform: translateX(0);
+      padding-left: 10px;
+    }
+  }
+
+  &__text {
+    flex: 0 1 auto;
+    max-width: 750px;
+    transform: translateX(-44px);
+    z-index: 3;
+
+    &-title {
+      @include m.font(78px, 700, v.$text);
+
+      span {
+        color: color.adjust(v.$text, $alpha: -0.5);
+      }
+    }
+
+    &-description {
+      line-height: 1.5;
+    }
+
+    @media (max-width: v.$media_xxl) {
+      max-width: 650px;
+      transform: translateX(-40px);
+      &-title {
+        @include m.font(70px, 700, v.$text);
+      }
+    }
+
+    @media (max-width: v.$media_xl) {
+      max-width: 500px;
+      transform: translateX(-30px);
+      &-title {
+        @include m.font(60px, 700, v.$text);
+      }
+    }
+
+    @media (max-width: v.$media_lg) {
+      max-width: 430px;
+      transform: translateX(-30px);
+      &-title {
+        @include m.font(57px, 700, v.$text);
+      }
+    }
+
+    @media (max-width: v.$media_md) {
+      flex-shrink: 0;
+      max-width: 320px;
+      transform: translateX(-80px);
+      &-title {
+        @include m.font(54px, 700, v.$text);
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 120px 0 50px;
+    &__img {
+      padding: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 640px;
+        object-fit: contain;
+      }
+    }
+
+    &__text {
+      width: 100%;
+      transform: none;
+      max-width: 640px;
+      padding: 0 20px;
+      @include m.d-flex(center, start, nowrap, column, 0, 15px);
+
+      &-title {
+        @include m.font(50px, 700, v.$text);
+      }
+    }
+  }
+  
+  @media (max-width: v.$media_sm) {
+    padding: 90px 0 50px;
+
+    &__text {
+
+      &-title {
+        @include m.font(40px, 700, v.$text);
+      }
+    }
+  }
+
+  @media (max-width: v.$media_min) {
+    &__text {
+
+      &-title {
+        @include m.font(32px, 700, v.$text);
+      }
+    }
+  }
+}

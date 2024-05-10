@@ -1,0 +1,80 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+
+.header {
+  @include m.position(fixed, 10, -1, top, left, 0, 0);
+  width: 100%;
+  padding: 0 40px;
+
+  .nav {
+    min-height: 90px;
+    @include m.d-flex(space-between, center, nowrap, row, 160px, 0);
+
+    &__logo {
+      &-link {
+        &__icon {
+          width: 79px;
+          height: 24px;
+          fill: v.$text;
+        }
+      }
+    }
+
+    .list {
+      @include m.d-flex(end, center, nowrap, row, 20px, 0);
+
+
+      &__item {
+        &-link {
+          min-height: 90px;
+          padding: 0 25px;
+          @include m.d-flex(center, center);
+          @include m.font(16px, 400, v.$text);
+          transition: all 0.3s linear;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .menu-active {
+          background-color: v.$primary;
+        }
+      }
+    }
+
+    @media (max-width: v.$media_lg) {
+      column-gap: 50px;
+
+      .list {
+        @include m.d-flex(end, center, nowrap, row, 10px, 0);
+
+
+        &__item {
+          &-link {
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: v.$media_md) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: v.$media_sm) {
+    .nav {
+      min-height: 72px;
+      @include m.d-flex(space-between, center, nowrap, row, 160px, 0);
+
+      .list {
+        display: none;
+      }
+    }
+  }
+}
+
+.header--scrolling {
+  background-color: v.$base;
+}
