@@ -1,0 +1,83 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.experience-section {
+  padding: 120px 0 145px;
+
+  .experience {
+    @include m.d-flex(start, start, nowrap, column, 0, 60px);
+
+    &__title {
+      @include m.d-flex(start, start, nowrap, column, 0, 10px);
+      max-width: 690px;
+    }
+
+    .list {
+      width: 100%;
+      @include m.d-flex(space-between, flex-start, nowrap, row, 85px, 0);
+
+      &__item {
+        @include m.d-flex(start, start, nowrap, column, 0, 30px);
+        max-width: 365px;
+        width: 100%;
+
+        &-title {
+          .green-accent {
+            color: v.$green_accent;
+          }
+
+          .blue-accent {
+            color: v.$blue_accent;
+          }
+
+          .pink-accent {
+            color: v.$pink-accent;
+          }
+        }
+
+        &-description {
+          font-size: 16px;
+          color: v.$label_grey;
+        }
+      }
+    }
+  }
+
+  @media (max-width: v.$media_lg) {
+    .experience {
+      .list {
+        @include m.d-flex(space-between, flex-start, nowrap, row, 50px, 0);
+
+        &__item {
+          max-width: 190px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: v.$media_sm) {
+    padding: 50px 10px;
+    .experience {
+
+      &__title {
+        max-width: 570px;
+
+        &-text {
+          font-size: 32px;
+        }
+      }
+
+      .list {
+        @include m.d-flex(space-between, flex-start, nowrap, column, 0, 40px);
+
+        &__item {
+          @include m.d-flex(start, start, nowrap, column, 0, 15px);
+          max-width: 570px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
