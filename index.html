@@ -12,7 +12,58 @@
     <title>Robin.W</title>
 </head>
 <body>
-<p>sdgds</p>
-<h1>sgdsg</h1>
+
+<header class="header" aria-label="header">
+    <div class="container">
+        <nav class="header__nav nav" aria-label="header navigation">
+
+            <div class="nav__logo">
+                <a href="#" class="nav__logo-link" aria-label="header navigation logo link">
+                    <svg class="nav__logo-link__icon" aria-label="header navigation logo icon">
+                        <use href="assets/sprites.svg#logo-icon"></use>
+                    </svg>
+                </a>
+            </div>
+
+            <ul class="nav__list list">
+                <li class="list__item">
+                    <a href="#experience" class="list__item-link menu-active">Experience</a>
+                </li>
+                <li class="list__item">
+                    <a href="#work" class="list__item-link">Work</a>
+                </li>
+                <li class="list__item">
+                    <a href="#photo" class="list__item-link">Photography</a>
+                </li>
+                <li class="list__item">
+                    <a href="#contact" class="list__item-link">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+<main class="main" aria-label="main">
+    <section class="top" aria-label="top section">
+        <div class="top__wrapper">
+            <picture class="top__img">
+                <source srcset="assets/img/top/top_sm.webp" type="image/webp">
+                <img src="assets/img/top/top.jpg" alt="photo of designer">
+            </picture>
+
+            <div class="top__text">
+                <h1 class="top__text-title">I’m Robin Williams. <br>A Product Designer <br><span>based in Italy.</span></h1>
+                <p class="top__text-description">
+                    I’m probably the most passionate designer you
+                    will ever get to work with. If you have a great project
+                    that needs some amazing skills, I’m your guy.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="js/main.js"></script>
 </body>
 </html>
