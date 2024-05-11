@@ -1,1 +1,10 @@
 @use 'variables' as v;
+
+%hover-link {
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: v.$dark_grey;
+    scale: 1.1;
+  }
+}
