@@ -1,0 +1,131 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+
+.skillset-section {
+  padding: 120px 0;
+
+  .skillset {
+    @include m.d-flex(space-between, start, nowrap, row, 90px, 0);
+
+    &__wrapper {
+      flex: 0 1 auto;
+      max-width: 335px;
+
+      &-title {
+        margin-bottom: 25px;
+      }
+    }
+
+    .list {
+      flex: 0 1 auto;
+      @include m.d-flex(end, start, wrap, row, 70px, 50px);
+
+      &__item {
+        max-width: 370px;
+        @include m.d-flex(start, start, nowrap, column, 0, 12px);
+        &-icon {
+          fill: v.$primary;
+          width: 32px;
+          height: 32px;
+        }
+
+        .motion-icon {
+          fill: none;
+          stroke: v.$primary;
+        }
+
+        &-title {
+          margin-top: 12px;
+        }
+
+        &-description {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 1260px) {
+        @include m.d-flex(start, start, wrap, row, 40px, 50px);
+
+        &__item {
+          max-width: 340px;
+        }
+      }
+    }
+
+    @media (max-width: v.$media_xl) {
+      @include m.d-flex(space-between, start, nowrap, row, 60px, 0);
+
+      &__wrapper {
+        max-width: 280px;
+      }
+
+      .list {
+        @include m.d-flex(end, start, wrap, row, 60px, 40px);
+
+        &__item {
+          max-width: 270px;
+        }
+      }
+    }
+
+    @media (max-width: v.$media_lg) {
+      max-width: 688px;
+      margin: 0 auto;
+      @include m.d-flex(center, start, nowrap, column, 0, 50px);
+
+      &__wrapper {
+        max-width: 100%;
+      }
+
+      .list {
+        max-width: 100%;
+        @include m.d-flex(space-between, start, wrap, row, 75px, 50px);
+
+        &__item {
+          max-width: 44%;
+        }
+      }
+    }
+
+    @media (max-width: v.$media_md) {
+
+      .list {
+        @include m.d-flex(space-between, start, wrap, row, 55px, 50px);
+
+        &__item {
+          max-width: 44%;
+        }
+      }
+    }
+
+    @media (max-width: v.$media_sm) {
+      max-width: 576px;
+      @include m.d-flex(center, start, nowrap, column, 0, 50px);
+
+      .list {
+        max-width: 100%;
+        @include m.d-flex(start, start, nowrap, column, 0, 50px);
+
+        &__item {
+          max-width: 100%;
+
+          &-title {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: v.$media_lg) {
+    padding: 80px 30px;
+  }
+
+  @media (max-width: v.$media_sm) {
+    padding: 65px 10px;
+  }
+}
+
