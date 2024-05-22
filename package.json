@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Moonsh1nee/Robin_designer#readme",
   "dependencies": {
-    "sass": "^1.77.0"
+    "sass": "^1.77.0",
+    "swiper": "^11.1.1"
   }
 }
