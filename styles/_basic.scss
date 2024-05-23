@@ -79,3 +79,13 @@ p {
     color: v.$label_grey;
     line-height: 1.5;
 }
+
+.btn {
+    font-family: "Sen", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    background-color: v.$base;
+    color: v.$text;
+    border: 1px solid v.$primary;
+}
