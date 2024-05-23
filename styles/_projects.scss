@@ -1,0 +1,143 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.projects-section {
+  padding: 120px 0 150px;
+}
+
+.projects {
+  &__wrapper {
+    @include m.d-flex(start, start, nowrap, row, 24px, 0);
+
+    &-item {
+      @include m.d-flex(start, center, nowrap, column, 0, 80px);
+
+      .projects__title {
+        @include m.d-flex(start, start, nowrap, column, 0, 10px);
+        max-width: 575px;
+      }
+
+      .list {
+        @include m.d-flex(start, start, nowrap, column, 0, 25px);
+
+        &__item {
+          max-width: 636px;
+          width: 100%;
+          flex: 0 1 auto;
+
+          &-link {
+            @include m.d-flex(center, center, nowrap, column, 0, 0);
+            background-color: v.$level_1;
+
+            transition: all .2s;
+
+            img {
+              object-fit: cover;
+              max-width: 636px;
+              width: 100%;
+              flex: 0 1 auto;
+            }
+
+            .list__item-text {
+              padding: 40px 32px;
+              flex: 0 1 auto;
+
+              .list__item-title {
+                margin-bottom: 15px;
+              }
+            }
+
+            &:hover {
+              cursor: pointer;
+              scale: 1.04;
+              background-color: v.$level_1-hover;
+            }
+          }
+        }
+      }
+
+      .projects__btn {
+        width: 247px;
+        height: 75px;
+
+        transition: background-color .3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: v.$primary;
+        }
+      }
+    }
+
+    &-item--left {
+      align-items: start;
+    }
+  }
+}
+
+@media (max-width: v.$media_md) {
+  .projects-section {
+    padding: 80px 0;
+  }
+
+  .projects {
+
+    &__wrapper {
+      @include m.d-flex(start, center, nowrap, column, 0, 48px);
+
+      &-item {
+        @include m.d-flex(start, center, nowrap, column, 0, 48px);
+
+        .projects__title {
+          max-width: 688px;
+          margin-bottom: 32px;
+        }
+
+        .list {
+          @include m.d-flex(start, start, nowrap, column, 0, 48px);
+
+          &__item {
+            max-width: 688px;
+
+            &-link {
+
+              img {
+                max-width: 688px;
+              }
+            }
+          }
+        }
+      }
+      .projects__btn {
+        display: none;
+      }
+    }
+
+    &-item--left {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: v.$media_sm) {
+  .projects-section {
+    padding: 70px 0;
+  }
+
+  .projects {
+
+    &__wrapper {
+
+      &-item {
+
+        .projects__title {
+          .projects__title-text {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}

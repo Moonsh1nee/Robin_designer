@@ -111,10 +111,6 @@
 
         &__item {
           max-width: 100%;
-
-          &-title {
-            font-size: 32px;
-          }
         }
       }
     }
@@ -126,6 +122,14 @@
 
   @media (max-width: v.$media_sm) {
     padding: 65px 10px;
+
+    .skillset {
+      .skillset__wrapper {
+        .skillset__wrapper-title {
+          font-size: 32px;
+        }
+      }
+    }
   }
 }
 
