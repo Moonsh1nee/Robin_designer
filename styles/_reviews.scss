@@ -1,0 +1,127 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.reviews-section {
+  padding: 120px 0;
+
+  .reviews {
+    @include m.d-flex(space-between, start, nowrap, row, 25px, 0);
+
+    &__info {
+      max-width: 588px;
+      width: 50%;
+      flex: 0 1 auto;
+      @include m.d-flex(center, start, nowrap, column, 0, 24px);
+
+      &-description {
+        margin-bottom: 16px;
+      }
+
+      &-link {
+        font-size: 16px;
+        position: relative;
+        @extend %hover-link;
+
+        &:after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          background-color: v.$label_grey;
+          @include m.position(absolute, 1, -1, bottom, left, -7px, 0);
+        }
+      }
+    }
+
+    .reviews__wrapper {
+      width: 50%;
+      flex: 0 1 auto;
+      @include m.d-flex(start, start, nowrap, column, 0, 120px);
+
+      .reviews__card {
+        max-width: 636px;
+        @include m.d-flex(start, start, nowrap, column, 0, 0);
+
+        &-img {
+          width: 100%;
+        }
+
+        .caption {
+          padding: 64px;
+          border: 1px solid v.$dark_grey;
+
+          &__review {
+            @include m.font(24px, 700, v.$text);
+            margin-bottom: 64px;
+          }
+
+          &__author {
+            @include m.font(18px, 700, v.$dark_grey);
+
+            .company {
+              display: block;
+              margin-top: 5px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: v.$media_md) {
+    padding: 80px 0;
+
+    .reviews {
+
+      .reviews__wrapper {
+        @include m.d-flex(start, start, nowrap, column, 0, 64px);
+
+        .reviews__card {
+
+          .caption {
+            padding: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: v.$media_sm) {
+    padding: 50px 0;
+
+    .reviews {
+      @include m.d-flex(space-between, start, nowrap, column, 0, 64px);
+
+      &__info {
+        max-width: 560px;
+        width: 100%;
+        @include m.d-flex(center, start, nowrap, column, 0, 16px);
+
+        &-title {
+          font-size: 32px;
+        }
+
+        &-description {
+          margin-bottom: 24px;
+        }
+      }
+
+      .reviews__wrapper {
+        max-width: 560px;
+        width: 100%;
+        flex: 0 1 auto;
+        @include m.d-flex(start, start, nowrap, column, 0, 50px);
+
+        .reviews__card {
+          max-width: 560px;
+
+          .caption {
+            padding: 32px;
+          }
+        }
+      }
+    }
+  }
+}
