@@ -1,6 +1,5 @@
 const header = document.querySelector(".header");
 
-
 window.addEventListener("scroll", (()=>{
         let e = window.scrollY;
         e > 90 ? header.classList.add("header--scrolling") : header.classList.remove("header--scrolling")
@@ -35,3 +34,24 @@ const swiper = new Swiper('.swiper', {
         }
     }
 });
+
+const photoBtn = document.querySelectorAll('.menu__btn');
+const photoItem = document.querySelectorAll('.slider__item');
+function open(e) {
+    const t = e.currentTarget,
+        n = t.dataset.button;
+    photoBtn.forEach((function (e) {
+        e.classList.remove('menu__btn-active');
+    }
+    )),
+        t.classList.add('menu__btn-active'),
+        photoItem.forEach((function (e) {
+            e.classList.remove('slider__item-active');
+        }
+        )),
+        document.querySelector(`#${n}`).classList.add('slider__item-active')
+}
+
+photoBtn.forEach((function (e) {
+    e.addEventListener('click', open);
+}));
