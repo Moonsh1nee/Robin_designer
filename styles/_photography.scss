@@ -1,0 +1,101 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.photography-section {
+  padding: 120px 0;
+
+  .photography {
+    @include m.d-flex(start, start, nowrap, column, 0, 65px);
+
+    &__info {
+      max-width: 590px;
+      @include m.d-flex(start, start, nowrap, column, 0, 25px);
+
+      @media (max-width: v.$media_md) {
+        max-width: 760px;
+      }
+
+      @media (max-width: v.$media_sm) {
+        .photography__info-title {
+          font-size: 32px;
+        }
+      }
+    }
+
+    .photo__slider {
+      @include m.d-flex(start, start, nowrap, column, 0, 40px);
+
+      .menu {
+        @include m.d-flex(start, center, wrap, row, 25px, 0);
+
+        &__btn {
+          padding: 12px 16px;
+
+          transition: background-color .3s;
+
+          &:hover {
+            cursor: pointer;
+            background-color: v.$primary;
+          }
+        }
+
+        .menu__btn-active {
+          background-color: v.$primary;
+        }
+
+        @media (max-width: v.$media_sm) {
+          @include m.d-flex(start, center, wrap, row, 25px, 25px);
+
+          &__btn {
+            flex-basis: 45%;
+            padding: 5px;
+            @include m.d-flex(center, center, nowrap, row, 0, 0);
+            width: 148px;
+            height: 51px;
+          }
+        }
+      }
+
+      &-wrapper {
+        .slider__item {
+          @include m.d-flex(start, start, wrap, row, 25px, 25px);
+          display: none;
+
+          &-img {
+            width: 306px;
+            height: 420px;
+
+            @media (max-width: v.$media_md) {
+              width: 320px;
+              height: 420px;
+            }
+
+            @media (max-width: v.$media_min) {
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          @media (max-width: v.$media_md) {
+            @include m.d-flex(center, start, wrap, row, 25px, 25px);
+            display: none;
+          }
+        }
+
+        .slider__item-active {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  @media (max-width: v.$media_md) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: v.$media_sm) {
+    padding: 50px 0;
+  }
+}
