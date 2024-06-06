@@ -33,6 +33,11 @@ li {
     list-style: none;
 }
 
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
 body {
     font-family: "Sen", sans-serif;
     font-weight: 400;
