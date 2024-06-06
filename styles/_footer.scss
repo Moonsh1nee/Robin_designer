@@ -1,0 +1,116 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+
+
+.footer-section {
+  padding: 80px 0;
+  background-color: v.$level_1;
+
+  .footer {
+    .footer__wrapper {
+      @include m.d-flex(space-between, start, nowrap, row, 200px, 0);
+      margin-bottom: 45px;
+
+      .footer__inner {
+        flex: 0 0 auto;
+        @include m.d-flex(start, start, nowrap, column, 0, 35px);
+
+        .footer__logo {
+          &-link {
+            &__icon {
+              width: 131px;
+              height: 40px;
+              fill: v.$text;
+            }
+          }
+        }
+
+        .footer__links {
+          @include m.d-flex(start, start, nowrap, row, 15px, 0);
+
+          &-item {
+
+            &__icon {
+              width: 24px;
+              height: 24px;
+            }
+
+            .twitter-icon {
+              fill: #26A7DE;
+            }
+
+            .dribbble-icon {
+              fill: #E94B88;
+            }
+
+            .linkedIn-icon {
+              fill: #0077B5;
+            }
+          }
+        }
+      }
+
+      .footer__nav {
+        flex: 0 1 400px;
+        .list {
+          @include m.d-flex(start, start, wrap, column, 24px, 25px);
+          align-content: space-between;
+          max-height: 192px;
+
+          &__item {
+            flex: 0 1 auto;
+
+            &-link {
+              @include m.font(16px, 400, v.$text);
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      @include m.font(16px, 400, v.$label_grey)
+    }
+
+  }
+
+  @media (max-width: v.$media_sm) {
+    padding: 50px 0;
+
+    .footer {
+      .footer__wrapper {
+        @include m.d-flex(space-between, start, nowrap, column, 0, 50px);
+        margin-bottom: 50px;
+
+        .footer__inner {
+          flex: 0 1 auto;
+        }
+
+        .footer__nav {
+          flex: 0 1 auto;
+          .list {
+            @include m.d-flex(start, start, nowrap, column, 0, 25px);
+            max-height: none;
+
+            &__item {
+              flex: 0 1 auto;
+
+              &-link {
+                @include m.font(16px, 400, v.$text);
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
