@@ -55,3 +55,14 @@ function open(e) {
 photoBtn.forEach((function (e) {
     e.addEventListener('click', open);
 }));
+
+
+const burger = document.querySelector('.nav__burger-wrapper');
+const burgerList = document.querySelector('.blist');
+
+
+function toggleBurger() {
+    burgerList.classList.toggle('active');
+}
+
+burger.addEventListener('click', toggleBurger);
