@@ -56,6 +56,14 @@
   .dribbble-section {
     .dribbble {
       @include m.d-flex(start, start, nowrap, column, 0, 65px);
+
+      &__info {
+
+        &-title {
+
+          @include m.font(32px, 700, v.$text);
+        }
+      }
     }
   }
 }

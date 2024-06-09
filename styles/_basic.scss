@@ -38,6 +38,10 @@ li {
     outline-offset: 0;
 }
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Sen", sans-serif;
     font-weight: 400;

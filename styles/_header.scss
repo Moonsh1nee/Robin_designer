@@ -66,7 +66,7 @@
   @media (max-width: v.$media_sm) {
     .nav {
       min-height: 72px;
-      @include m.d-flex(space-between, center, nowrap, row, 160px, 0);
+      @include m.d-flex(space-between, center, nowrap, row, 50px, 0);
 
       .list {
         display: none;
