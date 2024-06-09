@@ -27,7 +27,7 @@
 
             <ul class="nav__list list">
                 <li class="list__item">
-                    <a href="#experience" class="list__item-link menu-active">Experience</a>
+                    <a href="#experience" class="list__item-link">Experience</a>
                 </li>
                 <li class="list__item">
                     <a href="#work" class="list__item-link">Work</a>
@@ -41,25 +41,25 @@
             </ul>
 
 
-            <div class="nav__burger">
+            <div class="nav__burger burger">
 
-                <div class="nav__burger-wrapper">
-                    <div class="nav__burger-line"></div>
-                    <div class="nav__burger-line nav__burger-line--short"></div>
+                <div class="burger__btn">
+                    <div class="burger__btn-line"></div>
+                    <div class="burger__btn-line burger__btn-line--short"></div>
                 </div>
 
-                <ul class="nav__burger-list blist">
-                    <li class="blist__item">
-                        <a href="#experience" class="blist__item-link menu-active">Experience</a>
+                <ul class="burger__menu">
+                    <li class="burger__menu-item" data-burger="1">
+                        <a href="#experience" class="burger__menu-link">Experience</a>
                     </li>
-                    <li class="blist__item">
-                        <a href="#work" class="blist__item-link">Work</a>
+                    <li class="burger__menu-item" data-burger="2">
+                        <a href="#work" class="burger__menu-link">Work</a>
                     </li>
-                    <li class="blist__item">
-                        <a href="#photo" class="blist__item-link">Photography</a>
+                    <li class="burger__menu-item" data-burger="3">
+                        <a href="#photo" class="burger__menu-link">Photography</a>
                     </li>
-                    <li class="blist__item">
-                        <a href="#contact" class="blist__item-link">Contact</a>
+                    <li class="burger__menu-item" data-burger="4">
+                        <a href="#contact" class="burger__menu-link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +87,7 @@
         </div>
     </section>
 
-    <section class="experience-section" aria-label="experience section">
+    <section class="experience-section menu-observ" id="experience" aria-label="experience section">
         <div class="container">
             <div class="experience">
                 <div class="experience__title">
@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <section class="projects-section" aria-label="projects section">
+    <section class="projects-section menu-observ"  id="work" aria-label="projects section">
         <div class="container">
             <div class="projects">
                 <div class="projects__wrapper">
@@ -273,7 +273,7 @@
         </div>
     </section>
 
-    <section class="instagram-section" aria-label="instagram section">
+    <section class="instagram-section"  aria-label="instagram section">
         <div class="container-lg">
             <div class="instagram">
                 <div class="instagram__info">
@@ -372,7 +372,7 @@
         </div>
     </section>
 
-    <section class="photography-section" aria-label="photography section">
+    <section class="photography-section menu-observ" id="photo" aria-label="photography section">
         <div class="container-lg">
             <div class="photography">
                 <div class="photography__info">
@@ -431,7 +431,7 @@
         </div>
     </section>
 
-    <section class="form-section" aria-label="form section">
+    <section class="form-section menu-observ" id="contact" aria-label="form section">
         <div class="container">
             <div class="form">
                 <div class="form__info">

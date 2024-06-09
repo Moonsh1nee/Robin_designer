@@ -2,41 +2,47 @@
 @use "mixins" as m;
 @use "placeholders";
 
-.nav__burger {
-  .nav__burger-wrapper {
+.burger {
+  position: relative;
+  display: none;
+  &__btn {
     @include m.d-flex(start, end, nowrap, column, 0, 5px);
-    display: none;
     width: 18px;
-    position: relative;
 
-    .nav__burger-line {
+    &-line {
       height: 3px;
       width: 18px;
       background-color: #c4c4c4;
       z-index: 2;
     }
 
-    .nav__burger-line--short {
+    &-line--short {
       width: 13px;
     }
   }
 
-  .blist {
-    display: none;
+  &__menu {
+    height: 90vh;
+    width: 70vw;
     padding: 30px;
     position: absolute;
-    right: 0;
+    right: -30px;
     top: 0;
     z-index: -1;
     background-color: v.$base;
-    @include m.d-flex(start, start, nowrap, column, 0, 40px);
+    @include m.d-flex(space-between, start, nowrap, column, 0, 40px);
+    transition: transform .3s;
 
-    transform: translateX(-1000px);
+    transform: translateX(200%);
 
 
-    &__item {
-      &-link {
-        padding: 0 25px;
+    &-item {
+      @include m.d-flex(center, center, nowrap, row, 0, 0);
+      padding: 15px;
+      height: 20%;
+
+      transition: all .4s;
+      .burger__menu-link {
         @include m.d-flex(center, center);
         @include m.font(16px, 400, v.$text);
         transition: all 0.3s linear;
@@ -45,8 +51,8 @@
           text-decoration: underline;
         }
       }
-      .menu-active {
-        padding: 25px;
+
+      &.menu-active {
         background-color: v.$primary;
       }
     }
@@ -54,16 +60,22 @@
   }
 
   @media (max-width: v.$media_sm) {
-    .nav__burger-wrapper {
-      display: flex;
-    }
+    display: block;
 
-    .blist {
-      display: flex;
-    }
-
-    .blist.active {
+    .burger__menu.active {
       transform: translateX(0);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: v.$base;
+        opacity: 0.7;
+        z-index: -2;
+      }
     }
   }
 }

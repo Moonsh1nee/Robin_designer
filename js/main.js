@@ -57,8 +57,8 @@ photoBtn.forEach((function (e) {
 }));
 
 
-const burger = document.querySelector('.nav__burger-wrapper');
-const burgerList = document.querySelector('.blist');
+const burger = document.querySelector('.burger__btn');
+const burgerList = document.querySelector('.burger__menu');
 
 
 function toggleBurger() {
@@ -66,3 +66,33 @@ function toggleBurger() {
 }
 
 burger.addEventListener('click', toggleBurger);
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        
+        if (entry.isIntersecting) {
+            document.querySelectorAll('.list__item-link').forEach((link) => {
+                let id = link.getAttribute('href').replace('#', '');
+                if (id === entry.target.id) {
+                    link.classList.add('menu-active');
+                } else {
+                    link.classList.remove('menu-active');
+                }
+            });
+
+            document.querySelectorAll('.burger__menu-item').forEach((item) => {
+                let id = item.childNodes[1].getAttribute('href').replace('#', '');
+                if (id === entry.target.id) {
+                    item.classList.add('menu-active');
+                } else {
+                    item.classList.remove('menu-active');
+                }
+            });
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+document.querySelectorAll('.menu-observ').forEach(section => {observer.observe(section)} );
